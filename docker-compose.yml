@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: blog_app
+      MYSQL_USER: mohosin
+      MYSQL_PASSWORD: mohosin
+    networks:
+      springboot-mysql-net:
+
+  springboot_crud_restapi:
+    container_name: springboot_crud_restapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8088:8080"
+    networks:
+      springboot-mysql-net:
+    restart: on-failure
+
+networks:
+  springboot-mysql-net:

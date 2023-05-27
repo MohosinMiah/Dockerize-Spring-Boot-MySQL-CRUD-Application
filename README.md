@@ -66,4 +66,11 @@ To get the container list : <code>docker ps</code>
 18) To see the table data
 <code> select * from table_name; </code>
 
+## Docker compose is basically run or configure  multiple service in multiple container in single command
+19) <code>docker compose up</code>
+
+20) <code>docker compose down</code>
+
+## Docker compose up with custom Docker Build 
+21) <code>docker compose up -d --build  </code>
 
