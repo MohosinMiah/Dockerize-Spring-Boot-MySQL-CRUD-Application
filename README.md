@@ -30,5 +30,40 @@ and provide necessary credentails
 
 8) To see database  <code>show databases; </code> Here we can use other mysql commands
 
+9) Generate JAR file 
+<code>mnv clean package</code>
+
+10) Build the docker file
+<code>docker build -t springboot_crud_restapi .</code>
+or we can provide tag name
+<code>docker build -t springboot_crud_restapi:0.1.RELEASE .</code>
+
+11) Run our build Docker Image and run it same network that is running mysql
+<code>docker run --network springboot_mysql_net --name springboot_mysql_crud_container -p 8080:8080 springboot_crud_restapi:latest </code>
+To run in Detach mode
+<code>docker run --network springboot_mysql_net --name springboot_mysql_crud_container -p 8088:8080 -d springboot_crud_restapi:latest </code>
+To see the images <code>docker images</code>
+
+12) Docker container logs
+<code>docker logs -f first_4_contain_id</code>
+To get the container list : <code>docker ps</code>
+
+13) To access  container like to see the mysql container
+<code> docker exec -it container_name bash</code> 
+
+14) To access mySQL 
+<code>mysql -u root -p</code>
+
+15) List of databases
+<code>show databases;</code>
+
+16) To access specifi database
+<code>use database_name;</code>
+
+17) List of tables after access specific Database
+<code> show tables; </code>
+
+18) To see the table data
+<code> select * from table_name; </code>
 
 
